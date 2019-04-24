@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <style>
+      .sidebar {
+          float: left;
+          width: 30%;
+      }
+      .content {
+          float: left;
+          width: 70%;
+      }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+      <div>
+        <router-link to="/">Home</router-link>
+        <router-link to="/user">用户</router-link>
+        <router-link to="/article">帖子</router-link>
+      </div>
+
+      <div>
+          <router-view name="sidebar"></router-view>
+          <router-view name="content"></router-view>
+      </div>
+
+    </div>
+    <script>
+var routes = [
+        {
+          path: '/',
+          components: {
+            content: {
+              template: `
+                 <h1>welcome</h1>
+              `
+            }
+          },
+        },
+        {
+          path: '/user',
+          components: {
+            sidebar:{
+              template:`
+              <div>
+                <ul>
+                    <li>用户列表</li>
+                    <li>权限管理</li>
+                </ul>
+              </div>
+              `
+            },
+            content: {
+              template: `
+                  <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti in, laborum molestias necessitatibus optio perferendis quaerat quas qui quisquam sapiente. Architecto corporis eos eum libero optio, perspiciatis quo rem vel!</div>
+              `
+            }
+          },
+        },
+        {
+          path: '/article',
+          components: {
+            sidebar:{
+              template:`
+              <div>
+                <ul>
+                    <li>帖子列表</li>
+                    <li>权限管理</li>
+                    <li>you管理</li>
+                    <li>she管理</li>
+                </ul>
+              </div>
+              `
+            },
+            content: {
+              template: `
+                  <div> Deleniti in, laborum molestias necessitatibus optio perferendis quaerat quas qui quisquam sapiente. Architecto corporis eos eum libero optio, perspiciatis quo rem vel!</div>
+              `
+            }
+          },
+          
+        },
+      ];
+
+      var router = new VueRouter({
+        routes: routes,
+      });
+
+      new Vue({
+        el: '#app',
+        router: router,
+      });
+
+    </script>
+</body>
+</html>
