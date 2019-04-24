@@ -21,7 +21,7 @@
     <div id="app">
       <div>
         <router-link to="/">Home</router-link>
-        <router-link to="/user">用户</router-link>
+        <router-link :to="{name: 'user'}">用户</router-link>
         <router-link to="/article">帖子</router-link>
       </div>
 
@@ -32,7 +32,11 @@
 
     </div>
     <script>
-var routes = [
+
+
+      var router = new VueRouter({
+
+        routes : [
         {
           path: '/',
           components: {
@@ -44,7 +48,8 @@ var routes = [
           },
         },
         {
-          path: '/user',
+          path: '/hellow/user',
+          name: 'user',
           components: {
             sidebar:{
               template:`
@@ -84,12 +89,9 @@ var routes = [
               `
             }
           },
-          
         },
-      ];
-
-      var router = new VueRouter({
-        routes: routes,
+      ]
+        
       });
 
       new Vue({

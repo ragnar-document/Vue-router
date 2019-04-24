@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+      <div>
+        <router-link to="/">Home</router-link>
+        <router-link to="/user/呀阿咩爹">About</router-link>
+      </div>
+
+      <div>
+          <router-view></router-view>
+      </div>
+
+    </div>
+    <script>
+const User ={
+  template:`<h1>插进来了哦</h1>`
+}
+const Users = {
+  props: ['id'],
+  template: '<div>User {{ id }}</div>'
+}
+
+var routes = [
+        {
+          path: '/',
+          component: User
+        },
+        {
+          path: '/user/:id',
+          component: Users,
+          props: true
+          //对象模式
+          // props: { newsletterPopup: false }
+          
+        },
+      ];
+
+      var router = new VueRouter({
+        routes: routes,
+      });
+
+      new Vue({
+        el: '#app',
+        router: router,
+      });
+
+    </script>
+</body>
+</html>
