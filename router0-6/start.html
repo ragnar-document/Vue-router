@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+      <div>
+        <router-link to="/">Home</router-link>
+        <router-link to="/post">文章</router-link>
+        <router-link to="/people">人员</router-link>
+      </div>
+
+      <div>
+          <router-view></router-view>
+      </div>
+
+    </div>
+    <script>
+var routes = [
+        {
+          path: '/',
+          component: {
+            template: `
+            <div>
+              <h1>首页</h1>
+            </div>
+            `,
+          },
+        },
+        {
+          path: '/post',
+          component: {
+            template: `
+            <div>
+              <h1>文章</h1>
+            </div>
+            `,
+          },
+        },
+        {
+          path: '/people',
+          component: {
+            template: `
+            <div>
+              <h1>人员</h1>
+            </div>
+            `,
+          },
+        },
+      ];
+
+      var router = new VueRouter({
+        routes: routes,
+      });
+
+      //类似与中间件
+      router.beforeEach((to, from, next) => {
+        // to and from are both route objects. must call `next`.
+        var human = true;
+        if(!human && to.path == '/people')
+          next('/post')
+        else
+          next()
+
+      });
+
+      // router.beforeEach((to,from)=>{
+      //   //已经访问了所以就没有了next
+      //   console.log(to,from)
+      // })
+
+      new Vue({
+        el: '#app',
+        router: router,
+      });
+
+    </script>
+</body>
+</html>
