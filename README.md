@@ -11,6 +11,8 @@
 [router0-7 元数据及路由匹配](https://github.com/ragnar-document/Vue-router/tree/master/router0-7)
 [router0-8 路由组件传参](https://github.com/ragnar-document/Vue-router/tree/master/router0-8)
 [router0-9 缓存数据](https://github.com/ragnar-document/Vue-router/tree/master/router0-9)
+[router0-10 单个路由过渡，基于单个路由的动态过度](https://github.com/ragnar-document/Vue-router/tree/master/router0-10)
+[router0-11 进入离开的过渡效果](https://github.com/ragnar-document/Vue-router/tree/master/router0-11)
 *****
 ### 起步 ***start*** 🏃🏃‍♀️
 为了方便学习我们就只创建一个html文件作为演示文件  
