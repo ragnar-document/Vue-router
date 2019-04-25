@@ -1,6 +1,5 @@
-# Vue-router
-小实例
-# :-: Vue-Router学习笔记以及Demo实例
+
+#  Vue-Router学习笔记以及Demo实例
 *****
 ### 实例Demo下载 1.0版本有待改进 ⏬
 [router0-1 安装和基本配置 ](https://github.com/ragnar-document/Vue-router/tree/master/router0-1)
