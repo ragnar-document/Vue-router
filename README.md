@@ -10,6 +10,8 @@
 [router0-5 命名视图](https://github.com/ragnar-document/Vue-router/tree/master/router0-5) 
 [router0-6 导航钩子](https://github.com/ragnar-document/Vue-router/tree/master/router0-6) 
 [router0-7 元数据及路由匹配](https://github.com/ragnar-document/Vue-router/tree/master/router0-7)
+[router0-8 路由组件传参](https://github.com/ragnar-document/Vue-router/tree/master/router0-8)
+[router0-9 缓存数据](https://github.com/ragnar-document/Vue-router/tree/master/router0-9)
 *****
 ### 起步 ***start*** 🏃🏃‍♀️
 为了方便学习我们就只创建一个html文件作为演示文件  
