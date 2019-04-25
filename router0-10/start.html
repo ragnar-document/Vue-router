@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+      <div>
+        <router-link to="/">Home</router-link>
+        <router-link  :to ="{name: 'user'}" >用户</router-link>
+        <router-link to="/article">帖子</router-link>
+      </div>
+
+      <div>
+        <transition name="fade">
+           <router-view name="show"></router-view>
+        </transition>
+
+        <transition name="slide-fade">
+            <router-view name="show2"></router-view>
+        </transition>
+
+        <transition name="bounce">
+           <router-view></router-view>
+        </transition>
+       
+       
+      </div>
+
+    </div>
+    <script>
+  const routes = [
+    {
+      path: '/',
+      components:{
+        show:{
+           template:`
+        <h1>welcome my home</h1>
+        `
+        }
+      }
+    },
+    {
+      path: '/ooxx/hi',
+      name: 'user',
+      components:{
+        show2:{
+          template:`
+        <h1>welcome my user</h1>
+        `
+        }
+        
+      }
+    },
+    {
+      path: '/article',
+      components:{
+        bounce:{
+          template:`
+        <h1>welcome my article</h1>
+        `
+        }
+        
+      }
+    },
+  ]
+
+  var router = new VueRouter({
+    routes: routes
+  })
+
+
+
+  new Vue({
+    el: '#app',
+    router: router,
+  });
+
+</script>
+</body>
+</html>
