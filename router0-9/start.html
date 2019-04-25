@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+      <div>
+        <router-link to="/">Home</router-link>
+        <router-link to="/about">About</router-link>
+      </div>
+
+      <div>
+        <!-- keep-alive把数据缓存避免数据丢失在一些表单填写的网页常用到 -->
+        </keep-alive>
+          <keep-alive> 
+             <router-view></router-view>
+          </keep-alive>
+      </div>
+
+    </div>
+    <script>
+var routes = [
+        {
+          path: '/',
+          component: {
+            template: `
+            <div>
+              <h1>首页</h1>
+            </div>
+            `,
+          },
+        },
+        {
+          path: '/about',
+          component: {
+            template: `
+            <div>
+              <h1>关于我们</h1>
+              <input>
+            </div>
+            `,
+          },
+        },
+      ];
+
+      var router = new VueRouter({
+        routes: routes,
+      });
+
+      new Vue({
+        el: '#app',
+        router: router,
+      });
+
+    </script>
+</body>
+</html>
